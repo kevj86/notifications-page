@@ -1,11 +1,12 @@
 const notifications = [
   {
-    name: "Mark Webber",
+    name: "Ross Radford",
     avatar: "/assets/images/avatar-mark-webber.webp",
     notification: "reacted to your recent post",
     reaction: "My first tournament today!",
     timestamp: "1m",
     markasread: false,
+    directmessage: "",
   },
   {
     name: "Angela Gray",
@@ -14,6 +15,7 @@ const notifications = [
     reaction: "",
     timestamp: "5m",
     markasread: false,
+    directmessage: "",
   },
   {
     name: "Jacob Thompson",
@@ -22,14 +24,17 @@ const notifications = [
     reaction: "Chess Club",
     timestamp: "1 day",
     markasread: false,
+    directmessage: "",
   },
   {
     name: "Rizky Hasanuddin",
     avatar: "/assets/images/avatar-rizky-hasanuddin.webp",
     notification: "sent you a private message",
     reaction: "",
-    timestamp: "5days",
+    timestamp: "5 days",
     markasread: true,
+    directmessage:
+      "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and i'm already having lots of fun and improving my game",
   },
   {
     name: "Clare Creaney",
@@ -38,6 +43,7 @@ const notifications = [
     reaction: "",
     timestamp: "1 week",
     markasread: true,
+    directmessage: "",
   },
   {
     name: "Nathan Peterson",
@@ -46,6 +52,7 @@ const notifications = [
     reaction: "5-end-game strategies to increase your win rate",
     timestamp: "2 weeks",
     markasread: true,
+    directmessage: "",
   },
   {
     name: "Anna Kim",
@@ -54,6 +61,7 @@ const notifications = [
     reaction: "Chess Club",
     timestamp: "2 weeks",
     markasread: true,
+    directmessage: "",
   },
 ];
 
@@ -66,14 +74,26 @@ class Module {
   }
 
   getNotificationsHtml() {
-    const { name, avatar, notification, reaction, timestamp, markasread } =
-      this;
+    const {
+      name,
+      avatar,
+      notification,
+      reaction,
+      timestamp,
+      markasread,
+      directmessage,
+    } = this;
+    const dmPost =
+      directmessage.length > 0
+        ? `<div class="direct-message">${directmessage}</div>`
+        : ``;
     return `
         <div class="notification">
           <img src="${avatar}" alt="avatar of mark webber" class="avatar">
           <div class="user-info">
             <div class="message"><strong>${name} </strong> ${notification} <span class="reaction">${reaction}</span></div>
             <div class="timestamp">${timestamp} ago</div>
+            ${dmPost}
           </div>
         `;
   }
