@@ -112,3 +112,24 @@ strong:hover {
 .note-unread {
   background: var(--clr-light-greyblue1);
 }
+
+@media (max-width: 450px) {
+  .notification {
+    font-size: 0.85rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  #mark-read {
+    font-size: 0.8rem;
+  }
+
+  #notify-count {
+    font-size: 1rem;
+    padding: 0.15em 0.4em;
+    border-radius: 5px;
+    font-weight: 800;
+  }
+}
