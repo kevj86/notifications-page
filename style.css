@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap");
+
+:root {
+  --clr-red: hsl(1, 90%, 64%);
+  --clr-blue: hsl(219, 85%, 26%);
+  --clr-vlight-greyblue: hsl(210, 60%, 98%);
+  --clr-light-greyblue1: hsl(211, 68%, 94%);
+  --clr-light-greyblue2: hsl(205, 33%, 90%);
+  --clr-greyblue: hsl(219, 14%, 63%);
+  --clr-dark-greyblue: hsl(219, 12%, 42%);
+  --clr-vdark-blue: hsl(224, 21%, 14%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  background: var(--clr-light-greyblue2);
+  margin-top: 1em;
+  padding: 0 1em;
+}
+
+strong {
+  color: black;
+  padding-right: 3px;
+}
+
+.container {
+  background: white;
+  max-width: 750px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.notification-bar {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+#notify-count {
+  background: var(--clr-blue);
+  color: white;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
+  font-weight: 800;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 2.5em;
+  margin-bottom: 1em;
+}
+
+#mark-read {
+  color: var(--clr-greyblue);
+  cursor: pointer;
+}
+
+#notifications {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification {
+  display: flex;
+  gap: 1em;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 0.5em;
+  padding: 1em;
+  border-radius: 7.5px;
+
+  cursor: pointer;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.message {
+  color: var(--clr-dark-greyblue);
+  padding-bottom: 0.2em;
+}
+
+.reaction {
+  font-weight: 800;
+}
+
+span {
+  color: var(--clr-dark-greyblue);
+  padding-left: 2px;
+}
+
+span:hover,
+strong:hover {
+  color: var(--clr-blue);
+}
+
+.timestamp {
+  color: var(--clr-greyblue);
+}
+
+.note-unread {
+  background: var(--clr-light-greyblue1);
+}
